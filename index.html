@@ -68,8 +68,16 @@
             break;
         }
 
-        $(this).toggleClass(['animate__animated',className]);
+        // aimation on
+        $(this).addClass(['animate__animated',className]);
+
+        // animation release
+        $(this).on('animationend', function() {
+          console.log('anim and...')
+          $(this).removeClass();
+        })
       })
+
     })
 
 
